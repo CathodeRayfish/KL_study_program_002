@@ -1,0 +1,67 @@
+Program Manual:
+
+(Very) Quick start guide:
+
+    1. Either boot program on a PC compatible machine or an x86 PC virtual machine.
+    2. Type ”0000311” at the address prompt.
+    3. Starting doing the stuff.
+
+
+Getting Started (actual helpful guide)
+
+Running the program
+This program can be run on any IBM PC compatible computer* in 8086 real-mode. It can also be run under almost any virtual machine software
+
+Booting on a PC directly
+This program is directly bootable on any IBM PC or compatible machine, on modern machines you will need to ensure that CSM or Legacy booting is enabled in your system BIOS.
+Steps to boot:
+    1. Download one of the provided .img files and write it to a flash drive, optical disc, floppy disk, or other bootable storage medium. (For floppies RawriteWin works well on Windows, BalenaEtcher or Rufus can be used for flash drives)
+    2. Insert the disk into the target computer. On modern computers you may need to explicitly tell the machine to boot to the program, on older (’80s and ’90s) computers, the floppy may need to be in the A: drive for it to boot.
+    3. If you followed the steps correctly, you should now be greeted with the welcome prompt.
+
+Booting in a virtual machine
+Any virtual machine capable of emulating an x86 processor (so basically all of them) should also be able to run this program, with he added advantage of being able to do other things on your computer while running this software. In this section I will be demonstrating with Virtualbox because it is easy to set up and use, although the process should be similar for most VM software.
+Steps to boot:
+    1. Download and install Virtualbox if you don’t have it already: https://www.virtualbox.org/ No need for any additional Vbox addons, base software will be fine for this purpose.
+    2. Create a new Virtual machine, you can assign it to the minimum (4MB) of RAM and create no virtual hard disk file.
+    3. Select your virtual machine, select ”Settings” and go to ”Storage”, from here add a new storage controller and select ”I80278 (floppy)”
+    4. Next to the newly added floppy controller, press the button to add a new floppy drive, in the menu prompt it opens click ”add” then navigate to and select the .img file for this program.
+    5. Save changes, boot the machine, and; assuming you followed the steps correctly; you shall be greeted by a welcome prompt.
+
+General program use
+This section will guide you through basic usage of the program, including the (admittedly confusing) addressing process.
+Address prompt
+When you start the program you will be greeted by a message telling you to type the CHS address followed by sector read count. Fear not! This is not as complicated or scary as it may sound. For the purposes of using this program yiu needn’t know HOW this address works, just WHAT to put in. 
+-An address simply tells to the program where to read the disk from and how much of the disk to read, by giving it an address you are telling it where the data containing the questions and answers is. Luckily, you do not have to figure this out as all available disk files will tell you what addresses correspond to what questions.
+-With the base program disk you can simply type ”0000306” (or 0000311) to begin at the start of questions.
+-For further details about how this addressing works see [WIP not available yet] and for a list of addresses on the base program disk see list on page 4.
+
+General usage
+Pilluarit! You have made it through all the complicated parts of using this program, now it is basically a flash card program like any other!
+-Typing and backspace work but arrow keys, home, and end DO NOT
+-Answers are case sensitive and will always be lowercase unless the word in the question is capitalised.
+-When you reach the end of a set of questions you will be prompted for another address, look at the list for the addresses of more question sets on the base disk or you can change the disk.
+-f5 can be pressed at any time to return to the address entry prompt
+-The questions are case insensitive*
+*Unless assembled from source to be case sensitive
+Changing disks
+If you want to use the questions located on an entirely different file or disk then you will need to change the disk.
+When running directly on PC:
+-Simply change the disk out physically but ensure that the disk is being put in the SAME drive or port that you booted from (you can remove the initial boot disk when changing since the key components from that disk are already in memory)
+-Once the disk has been changed you can press f5 to prompt for a new address to load from.
+
+When in a virtual machine (Virtualbox in this example):
+-Unfortunately all virtual machines have a slightly different procedure of changing disks so I cannot represent of all of them here but for virtual box it is done as follows:
+    1. If needed press right control to release your mouse cursor.
+    2. Hover over ”devices” at the top of the window and go to ”floppy drives”
+    3. From here you can either select a recently used disk or you can press ”Choose or create” and navigate to your desired .img file.
+    4. Once the new disk has been loaded, press f5 to immediately re-prompt for an address.
+
+Additional stuff
+Just random things that don’t fit other places in this document
+List of addresses currently on base program disk
+    • 0000306: Questions from chapter 1 of How to Learn Greenlandic By Stian Lybech (available at oqa.dk)
+    • 0000905: Questions from chapter 2 of How to Learn Greenlandic By Stian Lybech (available at oqa.dk)
+    • 0000311: Load chapters one and 2 (add 6 sectors from 1, 5 from 2 = 11 and still base sector of 3)
+    • 0010106: Questions from chapter 3 of How to Learn Greenlandic By Stian Lybech (available at oqa.dk)
+        ◦ Note that on the NoGeometry version of the .img file this is located instead at address 0001406
