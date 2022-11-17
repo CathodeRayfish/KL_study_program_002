@@ -2,7 +2,7 @@
 
 This is a simple x86 real mode program that is designed for Kalaallisut study but (once I get a meaningful description of how to create question disks for it) it can really be used for any type of question-based study.
 
-Please see the included ProgramUserGuide.odt for instruction on how to get started using this program
+If you just want to use the program then download the latest from the releases section. Please see the included ProgramUserGuide.odt for instruction on how to get started using this program.
 
 In the future I will also create instructions of how one can make their own disk files with custom questions.
 
