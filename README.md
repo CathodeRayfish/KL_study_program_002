@@ -1,5 +1,10 @@
 # Simple_KL_study_program_001
 
+15-12-2022
+UPDATE INFO: In the next update the nodiskgeometry version shall be REMOVED, instead the manual shall provide addressing guides for both geometry-adhereing and geometry-ignoring system addressing using the same binary. The geometry adherence was kept to retain compatibility with some major VM software (like VBOX) and to retain full legacy system compatibility. The next update may take a while to come out due to the need for this change. However, having only one version to deal with going foward should make it easier to add new entries. Sorry for the long time with no updates!
+
+
+
 This is a simple x86 real mode program that is designed for Kalaallisut study but (once I get a meaningful description of how to create question disks for it) it can really be used for any type of question-based study.
 
 If you just want to use the program then download the latest from the releases section. Please see the included ProgramUserGuide.odt for instruction on how to get started using this program.
