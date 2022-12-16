@@ -1,7 +1,9 @@
 # Simple_KL_study_program_001
 
 15-12-2022
-UPDATE INFO: In the next update the nodiskgeometry version shall be REMOVED, instead the manual shall provide addressing guides for both geometry-adhereing and geometry-ignoring system addressing using the same binary. The geometry adherence was kept to retain compatibility with some major VM software (like VBOX) and to retain full legacy system compatibility. The next update may take a while to come out due to the need for this change. However, having only one version to deal with going foward should make it easier to add new entries. Sorry for the long time with no updates!
+UPDATE INFO: In the next update the nodiskgeometry version shall be REMOVED, instead the manual shall provide addressing guides for both geometry-adhereing and geometry-ignoring system addressing using the same binary. The geometry adherence was kept to retain compatibility with some major VM software (like VBOX) and to retain full legacy system compatibility. The next update may take a while to come out due to the need for this change. However, having only one version to deal with going foward should make it easier to add new entries. Yes, this change does waste a bit of space on the disk in non-geometry adhereing situations but I think that the tradeoff is worth it. And of course, just because the built-in question set is designed with disk geometry in mind (and wasted space), that does not mean that it is not supported anymore, custom question sets can still be whatever (as long as you address them correctly) as the question data is a seperate enitity from the code in some ways.
+
+Sorry for the long time with no updates!
 
 
 
